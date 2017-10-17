@@ -14,6 +14,8 @@ class MessagesController < ApplicationController
       flash[:notice] = "SMS has been sent."
       redirect_to @message
     else
+      flash.now[:alert] = "Message has not been sent."
+      render "new"
     end
   end
 
