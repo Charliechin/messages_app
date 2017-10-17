@@ -1,0 +1,14 @@
+<h1>new SMS</h1>
+
+<%= form_for(@message) do |f| %>
+  <p>
+  <%= f.label :sender %><br>
+  <%= f.text_field :sender %>
+  </p>
+
+  <p>
+  <%= f.label :body %><br>
+  <%= f.text_field :body %>
+  </p>
+  <%= f.submit "Send it" %>
+<% end %>

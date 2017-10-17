@@ -1,0 +1,27 @@
+class MessagesController < ApplicationController
+
+  def index
+  end
+
+  def new
+    @message = Message.new
+  end
+
+  def create
+    @message = Message.new(message_params)
+
+    if @message.save
+      flash[:notice] = "SMS has been sent."
+      redirect_to @message
+    else
+    end
+  end
+
+  def show
+    @message = Message.find(params[:id])
+  end
+  def message_params
+    #Strong parameters. Only these values are permitted to be sent to the Model
+    params.require(:message).permit(:sender, :body)
+  end
+end
