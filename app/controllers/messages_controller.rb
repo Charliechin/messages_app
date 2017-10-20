@@ -22,8 +22,10 @@ class MessagesController < ApplicationController
   def show
     @message = Message.find(params[:id])
   end
+
   def message_params
     #Strong parameters. Only these values are permitted to be sent to the Model
-    params.require(:message).permit(:sender, :body)
+    params.require(:message).permit(:sender, :body, :subject)
   end
+
 end

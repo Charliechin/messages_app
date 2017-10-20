@@ -38,7 +38,9 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
-  gem 'selenium-webdriver'
+ # Adds pry for debugging purposes
+ gem 'pry-rails'
+ gem 'selenium-webdriver'
 end
 
 group :development do
@@ -55,3 +57,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Adds Rspec Behaviour driven development
 gem 'rspec-rails'
+
+
+

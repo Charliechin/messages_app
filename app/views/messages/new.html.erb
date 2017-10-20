@@ -1,23 +1,12 @@
-<h1>new SMS</h1>
+<h1>new Message</h1>
 <% if @message.errors.any? %>
   <div id="error_explanation">
-    <h2><%= pluralize(@message.errors.count, "error") %> prohibited this messages from being sent:</h2>
+    <h2><%= pluralize(@message.errors.count, "error") %>
+    prohibited this project from being saved:</h2>
     <ul>
       <% @message.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
-    </ul>
-  </div>
-<% end %>
-<%= form_for(@message) do |f| %>
-  <p>
-  <%= f.label :sender %><br>
-  <%= f.text_field :sender %>
-  </p>
-
-  <p>
-  <%= f.label :body %><br>
-  <%= f.text_field :body %>
-  </p>
-  <%= f.submit "Send it" %>
-<% end %>
+    </ul> </div>
+  <% end %>
+  <%= render 'form', message_type: params[:message_type] %>

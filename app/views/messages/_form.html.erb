@@ -1,0 +1,22 @@
+This is form
+<%= message_type %>
+<p> FORM</p>
+<%= form_for(@message) do |f| %>
+  <p>
+  <%= f.label :sender %><br>
+  <%= f.text_field :sender %>
+  </p>
+
+  <p>
+  <% if message_type == 'email' %>
+  <%= f.label :subject %><br>
+  <%= f.text_field :subject %>
+  </p>
+<% end %>
+
+  <p>
+  <%= f.label :body %><br>
+  <%= f.text_field :body %>
+  </p>
+  <%= f.submit "Send it" %>
+<% end %>

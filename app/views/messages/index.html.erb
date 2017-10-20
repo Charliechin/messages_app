@@ -1,2 +1,7 @@
+index
 <h1>Send a messsage</h1>
-<%= link_to "Send a SMS", new_message_path %>
+<%= link_to "Send a SMS", new_message_path(message_type: 'sms')%>
+<%= link_to "Send an Email", new_message_path(message_type: 'email') %>
+<%= link_to "Send an Tweet", new_message_path(message_type: 'tweet') %>
+
+
