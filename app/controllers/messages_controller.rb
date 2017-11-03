@@ -4,10 +4,15 @@ class MessagesController < ApplicationController
   end
 
   def new
+    binding.pry
     @message = Message.new
   end
 
+  def show
+  end
+
   def create
+    binding.pry
     @message = Message.new(message_params)
 
     if @message.save
