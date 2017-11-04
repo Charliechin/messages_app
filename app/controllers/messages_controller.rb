@@ -6,7 +6,7 @@ class MessagesController < ApplicationController
     if @sender.to_i != 0
       redirect_to new_messages_text_path(sender: @sender)
     elsif @sender[0] == "@"
-      binding.pry
+      # CERRASTE ESTO, REDIRIGE A ALGUN message_tweet bla bla
     else
       @message = Message.new
       render new_messages_path
