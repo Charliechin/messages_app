@@ -1,0 +1,24 @@
+class TextsController < ApplicationController
+  def new
+    @sender = params[:sender]
+    @text = Text.new
+  end
+  def show
+    binding.pry
+    @text = Text.find(params[:id])
+  end
+  def create
+    @text = Text.new(text_params)
+    if @text.save
+      flash[:notice] = "SMS has been sent."
+      redirect_to messages_texts_path
+    else
+      flash.now[:alert] = "SMS has not been sent."
+      render 'new'
+    end
+  end
+  def text_params
+    #Strong parameters. Only these values are permitted to be sent to the Model
+    params.require(:text).permit(:sender, :body)
+  end
+end

@@ -1,31 +1,32 @@
 class MessagesController < ApplicationController
 
-  def index
+  def create
+    binding.pry
+    @sender= message_params[:sender]
+    if @sender.to_i != 0
+      redirect_to new_messages_text_path(sender: @sender)
+    elsif @sender[0] == "@"
+      binding.pry
+    else
+      @message = Message.new
+      render new_messages_path
+    end
+    #  if @message.save
+    #      flash[:notice] = "SMS has been sent."
+    #      redirect_to @message
+    #    else
+    #      flash.now[:alert] = "Message has not been sent."
+    #      render "new"
+    #    end
   end
 
   def new
-    binding.pry
     @message = Message.new
   end
-
   def show
-  end
-
-  def create
+    #@message = Message.find(params[:id])
+    @ojete = "eheh"
     binding.pry
-    @message = Message.new(message_params)
-
-    if @message.save
-      flash[:notice] = "SMS has been sent."
-      redirect_to @message
-    else
-      flash.now[:alert] = "Message has not been sent."
-      render "new"
-    end
-  end
-
-  def show
-    @message = Message.find(params[:id])
   end
 
   def message_params
