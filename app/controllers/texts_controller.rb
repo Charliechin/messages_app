@@ -1,4 +1,5 @@
 class TextsController < ApplicationController
+
   def new
     @sender = params[:sender]
     @text = Text.new
@@ -9,6 +10,10 @@ class TextsController < ApplicationController
   end
   def create
     @text = Text.new(text_params)
+    d = Dictionary.new
+    expanded_body = d.expand_text(text_params[:body])
+    @text.update(expanded_body: expanded_body)
+    binding.pry
     if @text.save
       flash[:notice] = "SMS has been sent."
       redirect_to messages_texts_path

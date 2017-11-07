@@ -1,3 +1,4 @@
+require 'dictionary'
 class MessagesController < ApplicationController
 
   def create
@@ -22,11 +23,6 @@ class MessagesController < ApplicationController
 
   def new
     @message = Message.new
-  end
-  def show
-    #@message = Message.find(params[:id])
-    @ojete = "eheh"
-    binding.pry
   end
 
   def message_params
