@@ -26,6 +26,7 @@ class Dictionary
     end
     return text_to_expand.join(" ")
   end
+
   def expand_word(word_to_expand)
     #returns the expanded version of the abbr. version given
     #else nil
