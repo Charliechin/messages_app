@@ -1,0 +1,27 @@
+<h1>Email - New</h1>
+<%= form_for @email, url: messages_path do |f| %>
+  <% if @email.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@email.errors.count, "error") %> prohibited this email from being saved: </h2>
+      <ul>
+        <% @email.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+  <%= f.label :sender %><br/>
+  <%= f.text_field :sender, :value => @sender %>
+  </p>
+  <p>
+  <%= f.label :subject %><br/>
+  <%= f.text_field :subject,maxlength: 20 %>
+  </p>
+  <p>
+  <%= f.label :body %><br/>
+  <%= f.text_field :body, maxlength: 1028 %>
+  </p>
+  <%= f.submit %>
+<% end %>

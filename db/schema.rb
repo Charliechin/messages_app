@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171107024837) do
+ActiveRecord::Schema.define(version: 20171109130810) do
+
+  create_table "emails", force: :cascade do |t|
+    t.string "sender"
+    t.string "subject"
+    t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "messages", force: :cascade do |t|
     t.string "sender"
@@ -26,6 +34,14 @@ ActiveRecord::Schema.define(version: 20171107024837) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "expanded_body"
+  end
+
+  create_table "tweets", force: :cascade do |t|
+    t.string "sender"
+    t.text "body"
+    t.text "expanded_body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

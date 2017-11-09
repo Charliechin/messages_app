@@ -1,0 +1,14 @@
+<h1>Tweets#new</h1>
+
+<%= form_for @tweet, url: messages_tweets_path do |f| %>
+  <p>
+  <%= f.label :sender %><br/>
+  <%= f.text_field :sender, maxlength: 15, :value => @sender %>
+  </p>
+
+  <p>
+  <%= f.label :body %><br/>
+  <%= f.text_area :body, :maxlength => 120%>
+  </p>
+  <%= f.submit %>
+<% end %>

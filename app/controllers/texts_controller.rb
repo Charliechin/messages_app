@@ -4,10 +4,12 @@ class TextsController < ApplicationController
     @sender = params[:sender]
     @text = Text.new
   end
+
   def show
     binding.pry
     @text = Text.find(params[:id])
   end
+
   def create
     @text = Text.new(text_params)
     d = Dictionary.new
@@ -22,6 +24,7 @@ class TextsController < ApplicationController
       render 'new'
     end
   end
+  private
   def text_params
     #Strong parameters. Only these values are permitted to be sent to the Model
     params.require(:text).permit(:sender, :body)

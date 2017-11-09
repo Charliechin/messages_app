@@ -1,13 +1,13 @@
-require 'dictionary'
 class MessagesController < ApplicationController
 
   def create
-    binding.pry
     @sender= message_params[:sender]
     if @sender.to_i != 0
       redirect_to new_messages_text_path(sender: @sender)
     elsif @sender[0] == "@"
-      # CERRASTE ESTO, REDIRIGE A ALGUN message_tweet bla bla
+      redirect_to new_messages_tweet_path(sender: @sender)
+    elsif @sender == "email"
+      redirect_to new_messages_email_path(sender: @sender)
     else
       @message = Message.new
       render new_messages_path
