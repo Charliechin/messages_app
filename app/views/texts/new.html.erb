@@ -1,5 +1,6 @@
 <h1>TEXT - NEW</h1>
 <%= @sender %>
+<%= binding.pry  %>
  texts/index.html
 
  <%= form_for @text, url: messages_texts_path  do |f| %>
@@ -13,6 +14,7 @@
    </p>
    <%= f.label :body %><br/>
    <%= f.text_area :body, :maxlength => 140%>
+   <%= f.hidden_field :header, :value => @header %>
    </p>
    <%= f.submit %>
  <% end %>

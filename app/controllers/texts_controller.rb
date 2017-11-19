@@ -2,6 +2,7 @@ class TextsController < ApplicationController
 
   def new
     @sender = params[:sender]
+    @header = params[:header]
     @text = Text.new
   end
 
@@ -27,6 +28,6 @@ class TextsController < ApplicationController
   private
   def text_params
     #Strong parameters. Only these values are permitted to be sent to the Model
-    params.require(:text).permit(:sender, :body)
+    params.require(:text).permit(:sender, :body, :header)
   end
 end

@@ -23,5 +23,6 @@
   <%= f.label :body %><br/>
   <%= f.text_field :body, maxlength: 1028 %>
   </p>
+  <%= f.hidden_field :header, :value => @header %>
   <%= f.submit %>
 <% end %>

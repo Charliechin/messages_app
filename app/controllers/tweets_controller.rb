@@ -2,6 +2,7 @@ class TweetsController < ApplicationController
 
   def new
     @sender = params[:sender]
+    @header = params[:header]
     @tweet = Tweet.new
   end
 
@@ -33,7 +34,7 @@ class TweetsController < ApplicationController
 
   private
   def tweet_params
-    params.require(:tweet).permit(:sender, :body)
+    params.require(:tweet).permit(:sender, :body, :header)
   end
 
   def get_hashtags(text)

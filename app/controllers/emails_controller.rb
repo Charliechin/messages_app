@@ -1,6 +1,7 @@
 class EmailsController < ApplicationController
   def new
     @sender = params[:sender]
+    @header = params[:header]
     @email = Email.new
   end
 
@@ -20,7 +21,7 @@ class EmailsController < ApplicationController
 end
   private
   def email_params
-    params.require(:email).permit(:sender, :body)
+    params.require(:email).permit(:sender, :body, :header)
   end
 end
 
