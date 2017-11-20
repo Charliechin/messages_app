@@ -11,17 +11,17 @@ class EmailsController < ApplicationController
 
   def create
     @email = Email.new(email_params)
-    # TODO BODY AUTH 
+    # TODO BODY AUTH
     if @email.save
       flash[:notice] = "Email has been sent."
       redirect_to messages_emails_path
     end
   end
   def index
-end
+  end
   private
   def email_params
-    params.require(:email).permit(:sender, :body, :header)
+    params.require(:email).permit(:sender, :header, :subject, :body)
   end
 end
 

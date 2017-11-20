@@ -10,16 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171120192240) do
+ActiveRecord::Schema.define(version: 20171120222215) do
 
-  create_table "emails", force: :cascade do |t|
-    t.string "sender"
-    t.string "subject"
-    t.text "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.text "header"
-  end
+# Could not dump table "emails" because of following StandardError
+#   Unknown type 'bool' for column 'in_quarantine'
 
   create_table "messages", force: :cascade do |t|
     t.string "sender"
