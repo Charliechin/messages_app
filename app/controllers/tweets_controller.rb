@@ -15,11 +15,14 @@ class TweetsController < ApplicationController
 
     @tweet = Tweet.new(tweet_params)
     @hashtags = []
+    @mentions = []
     body = tweet_params[:body]
-    binding.pry
     expanded_body = d.expand_text(body)
     hashtags = get_hashtags(body)
-    @tweet.update(expanded_body: expanded_body, hashtag: hashtags)
+    mentions = get_mentions(body)
+    @tweet.expanded_body = expanded_body
+    @tweet.hashtag = hashtags
+    @tweet.mentions = mentions
     if @tweet.save
       flash[:notice] = "Tweet has been sent."
       redirect_to messages_tweets_path
@@ -46,5 +49,17 @@ class TweetsController < ApplicationController
       end
     end
     hashtags == [] ? nil : hashtags
+  end
+
+  def get_mentions(text)
+    body = text.split(" ")
+    mentions = []
+    body.each do |word_to_check|
+      if word_to_check.include? "@"
+        binding.pry
+        mentions << word_to_check
+      end
+    end
+    mentions == [] ? nil : mentions
   end
 end

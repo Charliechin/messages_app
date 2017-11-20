@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171119183402) do
+ActiveRecord::Schema.define(version: 20171120192240) do
 
   create_table "emails", force: :cascade do |t|
     t.string "sender"
@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 20171119183402) do
     t.datetime "updated_at", null: false
     t.string "hashtag"
     t.text "header"
+    t.string "mentions"
   end
 
 end
