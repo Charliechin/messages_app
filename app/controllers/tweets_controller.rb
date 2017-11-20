@@ -31,6 +31,19 @@ class TweetsController < ApplicationController
 
 
   def index
+    @tweets = Tweet.where.not('hashtag' => nil)
+    @total_hashtags = []
+    @tweets.each do |tweet|
+      @total_hashtags << tweet.hashtag
+    end
+    #As the hashtags are coming as an array, we need to flatten the array of array
+    #so we can check the amount of hashtags repeated
+    @hashtag_list = []
+    @total_hashtags = @total_hashtags.flatten(1)
+    @total_hashtags.each do |item|
+      @hashtag_list << "#{item}: #{@total_hashtags.count(item)}"
+    end
+    @hashtag_list = @hashtag_list.uniq
   end
 
 

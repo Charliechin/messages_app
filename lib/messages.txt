@@ -1,6 +1,0 @@
-{"tweet":{"id":19,"sender":"@ojete","body":"soy un tweet","expanded_body":"soy un tweet","hashtag":null,"header":"T256184676"}}
-{"tweet":{"id":19,"sender":"@ojete","body":"soy un tweet","expanded_body":"soy un tweet","hashtag":null,"header":"T256184676"}}
-{"tweet":{"id":20,"sender":"@last","body":"laksfj LOL","expanded_body":"laksfj LOL <Laughing out loud>","hashtag":null,"header":""}}
-{"tweet":{"id":21,"sender":"@fifinito","body":"el otro dia @paco me dijo que me LOL #joder","expanded_body":"el otro dia @paco me dijo que me LOL <Laughing out loud> #joder","hashtag":["#joder"],"header":"","mentions":"[\"@paco\"]"}}
-{"tweet":{"id":22,"sender":"@fofo","body":"cacas @mojones de varias personas @cagando","expanded_body":"cacas @mojones de varias personas @cagando","hashtag":null,"header":"","mentions":"[\"@mojones\", \"@cagando\"]"}}
-{"tweet":{"id":23,"sender":"@ulti","body":"#fuck No me puedo creer que KON me haya vendido @josleo","expanded_body":"#fuck No me puedo creer que KON <Konami Code> me haya vendido @josleo","hashtag":["#fuck"],"header":"T681510168","mentions":"[\"@josleo\"]"}}
