@@ -1,8 +1,24 @@
 <h1>Tweets#index</h1>
 <p>Find me in app/views/tweets/index.html.erb</p>
+<h2>Hashtag List:</h2>
+<% if @mentions_list != nil %>
 <ul>
 
   <%  @hashtag_list.each do |item| %>
     <li><%= item %></li>
   <% end %>
 </ul>
+<% else %>
+  <p>No hashtags found!</p>
+<% end %>
+
+<h2>Mention List:</h2>
+<% if @mentions_list != nil %>
+<ul>
+  <% @mentions_list.each do |item| %>
+    <li><%= item %></li>
+  <% end %>
+</ul>
+<% else %>
+  <p>No mentions found</p>
+<% end %>

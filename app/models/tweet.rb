@@ -5,4 +5,5 @@ class Tweet < ApplicationRecord
   # Tweet.hashtag[0] = "#Hello"
 
   serialize :hashtag
+  serialize :mentions
 end

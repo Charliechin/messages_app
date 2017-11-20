@@ -31,19 +31,38 @@ class TweetsController < ApplicationController
 
 
   def index
-    @tweets = Tweet.where.not('hashtag' => nil)
     @total_hashtags = []
-    @tweets.each do |tweet|
+    @hashtag_list = []
+    @tweets_with_hashtags = Tweet.where.not('hashtag' => nil)
+    #We iterate through tweets with hashtags and store them in a variable
+    @tweets_with_hashtags.each do |tweet|
       @total_hashtags << tweet.hashtag
     end
     #As the hashtags are coming as an array, we need to flatten the array of array
     #so we can check the amount of hashtags repeated
-    @hashtag_list = []
     @total_hashtags = @total_hashtags.flatten(1)
     @total_hashtags.each do |item|
+      #A little formatting
       @hashtag_list << "#{item}: #{@total_hashtags.count(item)}"
     end
+    #After counting, make each element unique
     @hashtag_list = @hashtag_list.uniq
+
+    #Mention list logic
+    @total_mentions = []
+    @mentions_list = []
+    @tweets_with_mentions = Tweet.where.not('mentions' => nil)
+    @tweets_with_mentions.each do |tweet|
+      @total_mentions << tweet.mentions
+    end
+
+    @total_mentions = @total_mentions.flatten(1)
+    @total_mentions.each do |item|
+      @mentions_list << "#{item}: #{@total_mentions.count(item)}"
+    end
+    @mentions_list = @mentions_list.uniq
+
+
   end
 
 
@@ -72,6 +91,7 @@ class TweetsController < ApplicationController
         mentions << word_to_check
       end
     end
+    binding.pry
     mentions == [] ? nil : mentions
   end
 end
