@@ -31,6 +31,8 @@ class TweetsController < ApplicationController
 
 
   def index
+    @tweets = Tweet.all
+    #Hashtag list logic
     @total_hashtags = []
     @hashtag_list = []
     @tweets_with_hashtags = Tweet.where.not('hashtag' => nil)
@@ -91,7 +93,6 @@ class TweetsController < ApplicationController
         mentions << word_to_check
       end
     end
-    binding.pry
     mentions == [] ? nil : mentions
   end
 end

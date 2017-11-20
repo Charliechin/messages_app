@@ -22,3 +22,17 @@
 <% else %>
   <p>No mentions found</p>
 <% end %>
+
+<h2>Tweet List:</h2>
+<ul>
+  <% @tweets.each do |tweet| %>
+    <li>-------------</li>
+    <li>Tweet header: <%= tweet.header %></li>
+    <li>Tweet sender: <%= tweet.sender %></li>
+    <li>Tweet body: <%= tweet.expanded_body %></li>
+    <li>Tweet created: <%= tweet.created_at.strftime("%d/%m/%Y") %></li>
+    <li>Tweet hashtag(s): <%= tweet.hashtag %></li>
+    <li>Tweet mention(s): <%= tweet.mentions %></li>
+    <li>-------------</li>
+  <% end %>
+</ul>
