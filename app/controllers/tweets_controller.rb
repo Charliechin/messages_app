@@ -56,7 +56,6 @@ class TweetsController < ApplicationController
     mentions = []
     body.each do |word_to_check|
       if word_to_check.include? "@"
-        binding.pry
         mentions << word_to_check
       end
     end
