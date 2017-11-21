@@ -22,7 +22,6 @@ class Email < ApplicationRecord
     if self.subject.include?("SIR")
       self.body.prepend("Sport Centre Code: #{self.centre_code}\n Nature of Incident: #{self.incident}\n\n")
       self.is_standard = false
-      binding.pry
     else
       self.is_standard = true
       self.incident = ""
