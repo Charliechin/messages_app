@@ -27,7 +27,6 @@ class EmailsController < ApplicationController
 
   def create
     @email = Email.new(email_params)
-    # TODO BODY AUTH
     if @email.save
       flash[:notice] = "Email has been sent."
       redirect_to messages_emails_path

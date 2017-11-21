@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171121190203) do
+ActiveRecord::Schema.define(version: 20171121190732) do
 
-# Could not dump table "emails" because of following StandardError
-#   Unknown type '' for column 'is_standard'
+  create_table "emails", force: :cascade do |t|
+    t.string "sender"
+    t.string "subject"
+    t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text "header"
+    t.boolean "in_quarantine"
+    t.text "incident"
+    t.text "centre_code"
+    t.boolean "is_standard"
+  end
 
   create_table "messages", force: :cascade do |t|
     t.string "sender"

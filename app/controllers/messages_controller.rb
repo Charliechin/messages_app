@@ -8,7 +8,6 @@ class MessagesController < ApplicationController
     elsif @sender[0] == "@"
       redirect_to new_messages_tweet_path(sender: @sender , header: generate_header("T"))
     elsif @sender[valid_email_regex] != nil
-      binding.pry
       redirect_to new_messages_email_path(sender: @sender , header: generate_header("E"))
     else
       @message = Message.new
