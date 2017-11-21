@@ -16,7 +16,6 @@ class Email < ApplicationRecord
           self.body = temp_body.join(" ")
         end
       end
-      binding.pry
     end
   end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171120222215) do
+ActiveRecord::Schema.define(version: 20171120235320) do
 
 # Could not dump table "emails" because of following StandardError
 #   Unknown type 'bool' for column 'in_quarantine'

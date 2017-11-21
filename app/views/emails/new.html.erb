@@ -20,6 +20,15 @@
   <%= f.text_field :subject,maxlength: 20 %>
   </p>
   <p>
+  <%= f.select(:incident, @incident_options.collect {|d| [d[0], d[1]]
+    }, {:include_blank => "Select"}, {:class => "some_class"} )
+  %>
+  </p>
+  <p>
+  <%= f.label :subject %><br/>
+  <%= f.text_field :subject,maxlength: 20 %>
+  </p>
+  <p>
   <%= f.label :body %><br/>
   <%= f.text_field :body, maxlength: 1028 %>
   </p>

@@ -2,6 +2,19 @@ class EmailsController < ApplicationController
   def new
     @sender = params[:sender]
     @header = params[:header]
+    @incident_options = {
+      "Theft of Properties" => "Theft of Properties",
+      "Staff Attack" => "Staff Attack",
+      "Device Damage" => "Device Damage",
+      "Raid" => "Raid",
+      "Customer Attack" => "Customer Attack",
+      "Staff Abuse" => "Staff Abuse",
+      "Bomb Threat" => "Bomb Threat",
+      "Terrorism" => "Terrorism",
+      "Suspicious Incident" => "Suspicious Incident",
+      "Spot Injury" => "Spot Injury",
+      "Personal Info Leak" => "Personal Info Leak"
+    }
     @email = Email.new
   end
 
@@ -21,7 +34,7 @@ class EmailsController < ApplicationController
   end
   private
   def email_params
-    params.require(:email).permit(:sender, :header, :subject, :body)
+    params.require(:email).permit(:sender, :header, :subject, :body, :incident)
   end
 end
 
