@@ -1,5 +1,5 @@
 class ChangeSenderToBeStringInTweets < ActiveRecord::Migration[5.1]
   def change
-    change_column :tweets, :sender, :string
+    change_column :texts, :sender, :string
   end
 end
