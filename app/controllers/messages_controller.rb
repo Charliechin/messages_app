@@ -1,24 +1,19 @@
 class MessagesController < ApplicationController
 
   def create
+    valid_email_regex = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
     @sender= message_params[:sender]
     if @sender.to_i != 0
       redirect_to new_messages_text_path(sender: @sender, header: generate_header("S"))
     elsif @sender[0] == "@"
       redirect_to new_messages_tweet_path(sender: @sender , header: generate_header("T"))
-    elsif @sender == "email"
+    elsif @sender[valid_email_regex] != nil
+      binding.pry
       redirect_to new_messages_email_path(sender: @sender , header: generate_header("E"))
     else
       @message = Message.new
       render new_messages_path
     end
-    #  if @message.save
-    #      flash[:notice] = "SMS has been sent."
-    #      redirect_to @message
-    #    else
-    #      flash.now[:alert] = "Message has not been sent."
-    #      render "new"
-    #    end
   end
 
   def new
