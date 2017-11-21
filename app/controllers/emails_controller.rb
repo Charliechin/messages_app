@@ -15,6 +15,9 @@ class EmailsController < ApplicationController
       "Spot Injury" => "Spot Injury",
       "Personal Info Leak" => "Personal Info Leak"
     }
+
+
+    #READ TO DO IN views/emails/new.html.erb
     @email = Email.new
   end
 
@@ -34,7 +37,7 @@ class EmailsController < ApplicationController
   end
   private
   def email_params
-    params.require(:email).permit(:sender, :header, :subject, :body, :incident)
+    params.require(:email).permit(:sender, :header, :subject, :body, :incident, :centre_code)
   end
 end
 

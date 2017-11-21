@@ -1,5 +1,5 @@
 class Email < ApplicationRecord
-  before_save :check_urls
+  before_save :check_urls, :check_priority
   private
   def check_urls
     #checks Url in the body of the email
@@ -16,6 +16,17 @@ class Email < ApplicationRecord
           self.body = temp_body.join(" ")
         end
       end
+    end
+  end
+  def check_priority
+    if self.subject.include?("SIR")
+      self.body.prepend("Sport Centre Code: #{self.centre_code}\n Nature of Incident: #{self.incident}\n\n")
+      self.is_standard = false
+      binding.pry
+    else
+      self.is_standard = true
+      self.incident = ""
+      self.centre_code = ""
     end
   end
 end

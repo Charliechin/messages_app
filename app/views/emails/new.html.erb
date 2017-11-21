@@ -20,13 +20,14 @@
   <%= f.text_field :subject,maxlength: 20 %>
   </p>
   <p>
+  <%= f.label :incident %><br/>
   <%= f.select(:incident, @incident_options.collect {|d| [d[0], d[1]]
     }, {:include_blank => "Select"}, {:class => "some_class"} )
   %>
   </p>
   <p>
-  <%= f.label :subject %><br/>
-  <%= f.text_field :subject,maxlength: 20 %>
+  <%= f.label :centre_code %><br/>
+  <%= f.text_field :centre_code,maxlength: 10 %>
   </p>
   <p>
   <%= f.label :body %><br/>
@@ -35,3 +36,7 @@
   <%= f.hidden_field :header, :value => @header %>
   <%= f.submit %>
 <% end %>
+
+
+
+#TODO: Add a field with sport centre code, prepend to the body of email sport centre code and incident
