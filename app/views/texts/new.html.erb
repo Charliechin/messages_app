@@ -7,14 +7,11 @@
  <%= form_for @text, url: messages_texts_path  do |f| %>
    <p>
    <%= f.label :sender %><br/>
-   <%= f.text_field :sender, :value => @sender %>
+   <%= f.text_field :sender,:required => true, :value => @sender %>
    </p>
    <p>
-   <p class="lead">
-   Change max length of body
-   </p>
    <%= f.label :body %><br/>
-   <%= f.text_area :body, :maxlength => 140%>
+   <%= f.text_area :body,:required => true, :maxlength => 140%>
    <%= f.hidden_field :header, :value => @header %>
    </p>
    <%= f.submit %>

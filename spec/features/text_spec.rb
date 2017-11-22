@@ -1,27 +1,37 @@
 require "rails_helper"
 
-RSpec.feature "Users can create general messages" do
+RSpec.feature "Users can create text messages" do
+
   before do
-    visit "/"
-    click_link "Send a SMS"
+    visit new_messages_text_path
   end
 
-  scenario "with valid attributes" do
+  context "with valid attributes: " do
 
-    fill_in "Sender", with: "555-555-555"
-    fill_in "Body", with: "This is body"
-    click_button "Send it"
+    it "sends a text without abbreviations successfully" do
+      fill_in "Sender", with: "07549273977"
+      fill_in "Body", with: "lorem ipsum"
+      click_button "Create Text"
+      text_sent = Text.last.body
 
-    expect(page).to have_content "SMS has been sent."
+      expect(text_sent).to have_content "lorem ipsum"
+      expect(page).to have_content "SMS has been sent."
+    end
+
+    it "sends a text with abbreviations successfully" do
+      fill_in "Sender", with: "07549273977"
+      fill_in "Body", with: "lorem ipsum LOL"
+      click_button "Create Text"
+      text_body_expanded_sent = Text.last.expanded_body
+      expect(text_body_expanded_sent).to have_content
+      expect(page).to have_content "SMS has been sent."
+    end
   end
 
-  scenario "with invalid attributes" do
-
-    click_button "Send it"
-
-    expect(page).to have_content "Message has not been sent."
-    expect(page).to have_content "Sender can't be blank"
-    expect(page).to have_content "Body can't be blank"
-
+  context "with invalid attributes" do
+    it "will not allow the user to continue" do
+      click_button "Create Text"
+      expect(page).to have_current_path(messages_texts_path)
+    end
   end
 end
