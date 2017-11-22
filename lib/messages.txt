@@ -1,3 +1,7 @@
  {"email":{"id":37,"sender":"paco@as.com","subject":"not important","body":"Not is important","header":"E995543880","in_quarantine":false,"incident":"","centre_code":"","is_standard":true}}
 {"email":{"id":38,"sender":"paco@las.com","subject":"SIR 20/12/12","body":"Sport Centre Code: 123123\n Nature of Incident: Customer Attack\n\nTHIS IS IMPORTANT","header":"","in_quarantine":false,"incident":"Customer Attack","centre_code":"123123","is_standard":false}}
 {"tweet":{"id":7,"sender":"@ojete","body":"no hashtag","expanded_body":"no hashtag","hashtag":null,"header":"T594047793","mentions":null}}
+{"text":{"id":2,"sender":"07746100535","body":"Oli me cago en ti LOL mira esta madera WTF","expanded_body":"Oli me cago en ti LOL <Laughing out loud> mira esta madera WTF <What the f***>","header":"S619940552"}}
+{"tweet":{"id":8,"sender":"@martibiri","body":"@donaldTrump eres una maricona. #heh","expanded_body":"@donaldTrump eres una maricona. #heh","hashtag":["#heh"],"header":"T333488943","mentions":["@donaldTrump"]}}
+{"email":{"id":39,"sender":"mart@ibir.com","subject":"Esto no es important","body":"bobobobody heheheheh <URL Quarantined>","header":"E178383978","in_quarantine":true,"incident":"","centre_code":"","is_standard":true}}
+{"email":{"id":40,"sender":"mart@ibir.com","subject":"SIR 22/11/2017","body":"Sport Centre Code: 11233421\n Nature of Incident: Bomb Threat\n\nOstia vaya peaso de bomba miarma","header":"E178383978","in_quarantine":false,"incident":"Bomb Threat","centre_code":"11233421","is_standard":false}}
