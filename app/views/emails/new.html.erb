@@ -1,4 +1,6 @@
 <h1>Email - New</h1>
+<!-- do not change the id below, Rspec is expecting it -->
+<p id="email-description">This is text view</p>
 <%= form_for @email, url: messages_emails_path do |f| %>
   <% if @email.errors.any? %>
     <div id="error_explanation">

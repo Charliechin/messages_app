@@ -1,27 +1,31 @@
 require "rails_helper"
 
-RSpec.feature "Users can create general messages" do
+RSpec.feature "User creates a new message" do
   before do
     visit "/"
-    click_link "Send a SMS"
   end
 
-  scenario "with valid attributes" do
+  context "with valid attributes" do
 
-    fill_in "Sender", with: "555-555-555"
-    fill_in "Body", with: "This is body"
-    click_button "Send it"
+    it "sends a text when a phone number is filled in" do
+      fill_in "Sender", with: "07549273977"
+      click_button "Create Message"
 
-    expect(page).to have_content "SMS has been sent."
-  end
+      expect(page).to have_css "#text-description"
+    end
 
-  scenario "with invalid attributes" do
+   it "sends user to tweet view when a twitter account is filled in" do
+      fill_in "Sender", with: "@ojete"
+      click_button "Create Message"
 
-    click_button "Send it"
+      expect(page).to have_css "#tweet-description"
+    end
 
-    expect(page).to have_content "Message has not been sent."
-    expect(page).to have_content "Sender can't be blank"
-    expect(page).to have_content "Body can't be blank"
+    it "sends user to email view when an email is filled in" do
+      fill_in "Sender", with: "mail@example.com"
+      click_button "Create Message"
 
+      expect(page).to have_css "#email-description"
+    end
   end
 end
