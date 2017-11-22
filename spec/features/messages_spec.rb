@@ -1,20 +1,20 @@
 require "rails_helper"
 
-RSpec.feature "User creates a new message" do
+RSpec.feature "User fill in sender text box" do
   before do
     visit "/"
   end
 
-  context "with valid attributes" do
+  context "with valid attributes: " do
 
-    it "sends a text when a phone number is filled in" do
+    it "sends user to text view  when a phone number is filled in" do
       fill_in "Sender", with: "07549273977"
       click_button "Create Message"
 
       expect(page).to have_css "#text-description"
     end
 
-   it "sends user to tweet view when a twitter account is filled in" do
+    it "sends user to tweet view when a twitter account is filled in" do
       fill_in "Sender", with: "@ojete"
       click_button "Create Message"
 
@@ -26,6 +26,14 @@ RSpec.feature "User creates a new message" do
       click_button "Create Message"
 
       expect(page).to have_css "#email-description"
+    end
+  end
+  context "with invalid attributes" do
+    it "redirect redirects user to same page" do
+      fill_in "Sender", with: "foobar"
+      click_button "Create Message"
+
+      expect(page).to have_current_path("/messages")
     end
   end
 end
