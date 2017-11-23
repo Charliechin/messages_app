@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 20171121190732) do
   end
 
   create_table "tweets", force: :cascade do |t|
-    t.string "sender"
+    t.integer "sender"
     t.text "body"
     t.text "expanded_body"
     t.datetime "created_at", null: false
