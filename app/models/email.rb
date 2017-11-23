@@ -1,5 +1,12 @@
 class Email < ApplicationRecord
   before_save :check_urls, :check_priority
+
+  validates :sender, presence: true
+  validates :subject, presence: true
+  validates :body, presence: true
+
+
+
   private
   def check_urls
     #checks Url in the body of the email
