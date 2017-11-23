@@ -5,7 +5,6 @@
 body{background-color: #EEE}
 section.navigation-bar{margin-bottom: 50px;}
 section#messages{}
-h1{background-color: red}
 
 // Generic Classes
 
@@ -14,15 +13,14 @@ h1{background-color: red}
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   border-radius: 4px;
 
-
   .card-header{
     text-align: center;
-    background: pink;
+    background: #e7e7e7;
     border-radius: 4px;
     padding-top: 0.5em;
 
     .card-content{
-      background: purple;
+      background: white;
       padding: 1em;
     }
   }

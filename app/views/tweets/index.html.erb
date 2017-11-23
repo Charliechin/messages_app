@@ -1,40 +1,36 @@
-<h1>Tweets#index</h1>
-<p>Find me in app/views/tweets/index.html.erb</p>
-<h2>Hashtag List:</h2>
-<% if @mentions_list != nil %>
-  NO CAMBIES ID, RSPEC IS WATCHING
-<ul id="hashtag-list">
-
-  <%  @hashtag_list.each do |item| %>
-    <li><%= item %></li>
+<section id="emails-list">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 text-center">
+        <h1>Tweets List</h1>
+      </div>
+    </div>
+  </div>
+<div class="col-xs-12 col-md-6">
+  <% if @mentions_list != nil %>
+    <h2>Hashtag List:</h2>
+    <ul class="list-group" id="hashtag-list">
+      <%  @hashtag_list.each do |item| %>
+        <li class="list-group-item"><%= item %></li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p>No hashtags found!</p>
   <% end %>
-</ul>
-<% else %>
-  <p>No hashtags found!</p>
-<% end %>
+</div>
 
-<h2>Mention List:</h2>
-<% if @mentions_list != nil %>
-  NO CAMBIES ID, RSPEC IS WATCHING
-<ul id="mentions-list">
-  <% @mentions_list.each do |item| %>
-    <li><%= item %></li>
-  <% end %>
-</ul>
-<% else %>
-  <p>No mentions found</p>
-<% end %>
 
-<h2>Tweet List:</h2>
-<ul>
-  <% @tweets.each do |tweet| %>
-    <li>-------------</li>
-    <li>Tweet header: <%= tweet.header %></li>
-    <li>Tweet sender: <%= tweet.sender %></li>
-    <li>Tweet body: <%= tweet.expanded_body %></li>
-    <li>Tweet created: <%= tweet.created_at.strftime("%d/%m/%Y") %></li>
-    <li>Tweet hashtag(s): <%= tweet.hashtag %></li>
-    <li>Tweet mention(s): <%= tweet.mentions %></li>
-    <li>-------------</li>
+<div class="col-xs-12 col-md-6">
+  <h2>Mention List:</h2>
+  <% if @mentions_list != nil %>
+    <ul class="list-group" id="mentions-list">
+      <% @mentions_list.each do |item| %>
+        <li class="list-group-item"><%= item %></li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p>No mentions found</p>
   <% end %>
-</ul>
+</div>
+
+</section>

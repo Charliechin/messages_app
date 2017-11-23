@@ -1,22 +1,37 @@
-<h1>Emails</h1>
+<section id="emails-list">
+  <div class="container">
+    <div class="row" id="sir-list">
+      <div class="col-sm-12 text-center">
+        <h1>Email List</h1>
+      </div>
+      <% @emails.each do |email| %>
+
+        <% if !email.is_standard %>
+          <div class="col-xs-12 col-sm-6">
+            <div class="card">
+              <div class="card-header">
+                <p><%= email.sender %></p>
+                <div class="card-content">
+                  <p>Email subject: <%= email.subject %></p>
+                  <p>Email body: <%= email.body %></p>
+                  <p>Email in quarantine?: <%=  email.in_quarantine ? "true" : "false" %></p>
+                  <% if !email.is_standard %>
+                    <p> <p class="lead">SIR email</p> </p>
+                    <p><strong>Email Centre code:</strong> <%= email.centre_code %></p>
+                    <p><strong>Incident:</strong> <%= email.incident %></p>
+                  <% else %>
+                    <p> This is a standard email </p>
+                  <% end %>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+</section>
 
 
-<h2>Emails list:</h2>
-<ul id="sir-list">
-  <% @emails.each do |email| %>
-    <li>-------------</li>
-    <li>Email header: <%= email.header %></li>
-    <li>Email sender: <%= email.sender %></li>
-    <li>Email subject: <%= email.subject %></li>
-    <li>Email body: <%= email.body %></li>
-    <li>Email in quarantine?: <%=  email.in_quarantine ? "true" : "false" %></li>
-    <% if !email.is_standard %>
-      <li> <p class="lead">SIR email</p> </li>
-      <li>Email Centre code: <%= email.centre_code %></li>
-      <li>Incident: <%= email.incident %></li>
-    <% else %>
-      <li> This is a standard email </li>
-    <% end %>
-    <li>-------------</li>
-  <% end %>
-</ul>

@@ -1,19 +1,34 @@
-<h1>Texts</h1>
+<section id="texts-list">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 text-center">
+        <h1>Texts List</h1>
+      </div>
+      <% @texts.each do |text| %>
 
-<ul id="texts-list">
-  <% @texts.each do |text| %>
-    <li>-------------</li>
-    <li>Text header: <%= text.header %></li>
-    <li>Text sender: <%= text.sender %></li>
-    <li>Text body: <%= text.body %></li>
-    <% if text.expanded_body != text.body %>
-      <li>Text expanded body: <%= text.expanded_body %></li>
-    <% else %>
-      <li>This texts contains no abreviations</li>
-    <% end %>
-    <li>-------------</li>
-  <% end %>
-</ul>
+        <div class="col-xs-12 col-md-6" style="height: 250px">
+          <div class="card">
+            <div class="card-header">
+              <p><%= text.sender %></p>
+              <div class="card-content">
+                <p>Text header: <%= text.header %></p>
+                <p>Text body: <%= text.body %></p>
+
+                <% if text.expanded_body != text.body %>
+                  <p>Text expanded body: <%= text.expanded_body %></p>
+                <% else %>
+                  <p>This texts contains no abreviations</p>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+</section>
+
 
 
 
