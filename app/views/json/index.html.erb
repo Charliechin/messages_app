@@ -1,0 +1,50 @@
+<h1>Reading from messages.txt (JSON FILE)</h1>
+<h3>Emails</h3>
+
+<ul id="email-list">
+  <% @emails.each do |email| %>
+    <li>-------------</li>
+    <li>Email header: <%= email["header"] %></li>
+    <li>Email sender: <%= email["sender"] %></li>
+    <li>Email subject: <%= email["subject"] %></li>
+    <li>Email body: <%= email["body"] %></li>
+    <li>Email in quarantine?: <%=  email["in_quarantine"] ? "true" : "false" %></li>
+    <% if !email["is_standard"] %>
+      <li> <p class="lead">SIR email</p> </li>
+      <li>Email Centre code: <%= email["centre_code"] %></li>
+      <li>Incident: <%= email["incident"] %></li>
+    <% else %>
+      <li> This is a standard email </li>
+    <% end %>
+    <li>-------------</li>
+  <% end %>
+</ul>
+<h3>Tweets</h3>
+
+<ul id="tweet-list">
+  <% @tweets.each do |tweet| %>
+    <li>-------------</li>
+    <li>Tweet header: <%= tweet["header"] %></li>
+    <li>Tweet sender: <%= tweet["sender"] %></li>
+    <li>Tweet body: <%= tweet["expanded_body"] %></li>
+    <li>Tweet hashtag(s): <%= tweet["hashtag"] %></li>
+    <li>Tweet mention(s): <%= tweet["mentions"] %></li>
+    <li>-------------</li>
+  <% end %>
+</ul>
+<h3>Texts</h3>
+<ul id="texts-list">
+  <% @texts.each do |text| %>
+    <li>-------------</li>
+    <li>Text header: <%= text["header"] %></li>
+    <li>Text sender: <%= text["sender"] %></li>
+    <li>Text body: <%= text["body"] %></li>
+    <% if text["expanded_body"] != text["body"]%>
+      <li>Text expanded body: <%= text["expanded_body"] %></li>
+    <% else %>
+      <li>This texts contains no abreviations</li>
+    <% end %>
+    <li>-------------</li>
+  <% end %>
+</ul>
+
