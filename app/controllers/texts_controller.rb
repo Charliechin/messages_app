@@ -13,9 +13,7 @@ class TextsController < ApplicationController
   def create
     @text = Text.new(text_params)
     d = Dictionary.new
-    binding.pry
     expanded_body = d.expand_text(text_params[:body])
-    binding.pry
     @text.expanded_body = expanded_body
     if @text.save
       flash[:notice] = "SMS has been sent."

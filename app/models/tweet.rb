@@ -4,6 +4,9 @@ class Tweet < ApplicationRecord
   # Tweet.hashtag = ["#Hello","#goodbye"]
   # Tweet.hashtag[0] = "#Hello"
 
+  validates :sender, presence: true
+  validates :body, presence: true
+
   serialize :hashtag
   serialize :mentions
 end

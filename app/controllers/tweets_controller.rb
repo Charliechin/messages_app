@@ -26,6 +26,9 @@ class TweetsController < ApplicationController
     if @tweet.save
       flash[:notice] = "Tweet has been sent."
       redirect_to messages_tweets_path
+    else
+      flash[:alert] = "Tweet has not been created"
+      render :new
     end
   end
 
