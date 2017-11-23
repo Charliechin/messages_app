@@ -58,3 +58,6 @@
 {"tweet":{"id":1,"sender":"@duderino","body":"#hello lorem ipsum LOL","expanded_body":"#hello lorem ipsum LOL <Laughing out loud>","hashtag":["#hello"],"header":"","mentions":null}}
 {"tweet":{"id":1,"sender":"@duderino","body":"#hello @johnny lorem ipsum LOL","expanded_body":"#hello @johnny lorem ipsum LOL <Laughing out loud>","hashtag":["#hello"],"header":"","mentions":["@johnny"]}}
 {"tweet":{"id":1,"sender":"@duderino","body":"#hello @johnny lorem ipsum LOL","expanded_body":"#hello @johnny lorem ipsum LOL <Laughing out loud>","hashtag":["#hello"],"header":"","mentions":["@johnny"]}}
+{"email":{"id":44,"sender":"alksfj","subject":"asklfj","body":"alskfj","header":"","in_quarantine":false,"incident":"","centre_code":"","is_standard":true}}
+{"email":{"id":45,"sender":"alksfj","subject":"alskfj","body":"askfj","header":"","in_quarantine":false,"incident":"","centre_code":"","is_standard":true}}
+{"email":{"id":46,"sender":"kas@as.com","subject":"sjfka","body":"cacas","header":"","in_quarantine":false,"incident":"","centre_code":"","is_standard":true}}

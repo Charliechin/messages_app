@@ -16,8 +16,6 @@ class EmailsController < ApplicationController
       "Personal Info Leak" => "Personal Info Leak"
     }
 
-
-    #READ TO DO IN views/emails/new.html.erb
     @email = Email.new
   end
 
@@ -29,6 +27,9 @@ class EmailsController < ApplicationController
     @email = Email.new(email_params)
     if @email.save
       flash[:notice] = "Email has been sent."
+      redirect_to messages_emails_path
+    else
+      flash[:alert] = "Error creating Email"
       redirect_to messages_emails_path
     end
   end
