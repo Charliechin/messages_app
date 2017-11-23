@@ -1,6 +1,29 @@
 // Place all the styles related to the messages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-h1{
-  border: 1px solid red;
+
+body{background-color: #EEE}
+section.navigation-bar{margin-bottom: 50px;}
+section#messages{}
+h1{background-color: red}
+
+// Generic Classes
+
+.card{
+  background: #FFF;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  border-radius: 4px;
+
+
+  .card-header{
+    text-align: center;
+    background: pink;
+    border-radius: 4px;
+    padding-top: 0.5em;
+
+    .card-content{
+      background: purple;
+      padding: 1em;
+    }
+  }
 }

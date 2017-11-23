@@ -1,18 +1,34 @@
-<h1>TEXT - NEW</h1>
-<!-- do not change the id below, Rspec is expecting it -->
-<p id="text-description">This is text view</p>
-<%= @sender %>
- texts/index.html
+<section id="texts">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 text-center">
+        <h1>Text</h1>
+        <!-- do not change the id below, Rspec is expecting it -->
+        <p id="text-description">This is text view</p>
+      </div>
+      <div class="col-sm-6 col-sm-offset-3">
 
- <%= form_for @text, url: messages_texts_path  do |f| %>
-   <p>
-   <%= f.label :sender %><br/>
-   <%= f.text_field :sender,:required => true, :value => @sender %>
-   </p>
-   <p>
-   <%= f.label :body %><br/>
-   <%= f.text_area :body,:required => true, :maxlength => 140%>
-   <%= f.hidden_field :header, :value => @header %>
-   </p>
-   <%= f.submit %>
- <% end %>
+        <div class="card">
+          <div class="card-header">
+            <p>Fajsl</p>
+            <div class="card-content"> 
+              <%= form_for @text, url: messages_texts_path  do |f| %>
+                <p>
+                <%= f.label :sender %><br/>
+                <%= f.text_field :sender,:required => true, :value => @sender %>
+                </p>
+                <p>
+                <%= f.label :body %><br/>
+                <%= f.text_area :body,:required => true, :maxlength => 140%>
+                <%= f.hidden_field :header, :value => @header %>
+                </p>
+
+                <%= f.submit "Continue", class:"btn btn-warning btn-fill" %>
+              <% end %> 
+            </div>
+          </div>
+        </div> 
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,19 +1,40 @@
-<h1>MESSAGES - New</h1>
-<%= form_for @message, url: messages_path do |f| %>
-  <% if @message.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@message.errors.count, "error") %> prohibited this message from being saved: </h2>
-      <ul>
-        <% @message.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+<section id="messages">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 text-center">
+        <h1>Messages</h1>
+      </div>
+      <div class="col-sm-6 col-sm-offset-3">
 
-  <p>
-  <%= f.label :sender %><br/>
-  <%= f.text_field :sender %>
-  </p>
-  <%= f.submit %>
-<% end %>
+        <div class="card">
+          <div class="card-header">
+            <p>Fajsl</p>
+            <div class="card-content">
+              <%= form_for @message, url: messages_path do |f| %>
+                <% if @message.errors.any? %>
+                  <div id="error_explanation">
+                    <h2><%= pluralize(@message.errors.count, "error") %> prohibited this message from being saved: </h2>
+                    <ul>
+                      <% @message.errors.full_messages.each do |msg| %>
+                        <li><%= msg %></li>
+                      <% end %>
+                    </ul>
+                  </div>
+                <% end %>
+
+                <p>
+                <%= f.label :sender %><br/>
+                <%= f.text_field :sender, placeholder: "i.e @john" %>
+                </p>
+                <%= f.submit "Continue", class:"btn btn-warning btn-fill" %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+
+
+
+      </div>
+    </div>
+  </div>
+</section>
