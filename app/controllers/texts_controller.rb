@@ -10,6 +10,10 @@ class TextsController < ApplicationController
     @text = Text.find(params[:id])
   end
 
+  def index
+    @texts = Text.all
+  end
+
   def create
     @text = Text.new(text_params)
     d = Dictionary.new

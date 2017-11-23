@@ -1,5 +1,19 @@
+<h1>Texts</h1>
 
-
+<ul id="texts-list">
+  <% @texts.each do |text| %>
+    <li>-------------</li>
+    <li>Text header: <%= text.header %></li>
+    <li>Text sender: <%= text.sender %></li>
+    <li>Text body: <%= text.body %></li>
+    <% if text.expanded_body != text.body %>
+      <li>Text expanded body: <%= text.expanded_body %></li>
+    <% else %>
+      <li>This texts contains no abreviations</li>
+    <% end %>
+    <li>-------------</li>
+  <% end %>
+</ul>
 
 
 

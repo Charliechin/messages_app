@@ -67,3 +67,8 @@
 {"text":{"id":1,"sender":"012345","body":"yo yo LOL","expanded_body":null,"header":null}}
 {"text":{"id":7,"sender":"as","body":"s","expanded_body":"s","header":""}}
 {"text":{"id":8,"sender":"laksjf","body":"laskdf","expanded_body":"laskdf","header":""}}
+{"email":{"id":47,"sender":"paco@as.com","subject":"SIR 12","body":"Sport Centre Code: 6666\n Nature of Incident: Theft of Properties\n\ncacas <URL Quarantined>","header":"E625355830","in_quarantine":true,"incident":"Theft of Properties","centre_code":"6666","is_standard":false}}
+{"tweet":{"id":11,"sender":"@hola","body":"heheheh @hola #cosa1 #cosa 2","expanded_body":"heheheh @hola #cosa1 #cosa 2","hashtag":["#cosa1","#cosa"],"header":"T195967439","mentions":["@hola"]}}
+{"text":{"id":9,"sender":"091292","body":"hehehe WTF","expanded_body":"hehehe WTF <What the f***>","header":"S982441301"}}
+{"text":{"id":10,"sender":"hola","body":"hoooola","expanded_body":"hoooola","header":""}}
+{"text":{"id":11,"sender":"213421","body":"lol lol lol KON","expanded_body":"lol lol lol KON <Konami Code>","header":""}}
