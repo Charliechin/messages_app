@@ -42,7 +42,9 @@ group :development, :test do
  # Adds pry for debugging purposes
  gem 'pry-rails'
  gem 'selenium-webdriver'
+ gem 'railroady'
 end
+
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.

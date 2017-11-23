@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :texts # only: [:new, :create]
     resources :tweets
     resources :emails
+    resources :json, only: [:index]
   end
 end
 
