@@ -33,6 +33,7 @@ class EmailsController < ApplicationController
     end
   end
   def index
+    @emails = Email.all
   end
   private
   def email_params

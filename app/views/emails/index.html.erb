@@ -1,0 +1,23 @@
+<h1>Emails</h1>
+
+<h2>Hashtag List:</h2>
+
+<h2>Emails list:</h2>
+<ul id="sir-list">
+  <% @emails.each do |email| %>
+    <li>-------------</li>
+    <li>Email header: <%= email.header %></li>
+    <li>Email sender: <%= email.sender %></li>
+    <li>Email subject: <%= email.subject %></li>
+    <li>Email body: <%= email.body %></li>
+    <li>Email in quarantine?: <%=  email.in_quarantine ? "true" : "false" %></li>
+    <% if !email.is_standard %>
+      <li> <p class="lead">SIR email</p> </li>
+      <li>Email Centre code: <%= email.centre_code %></li>
+      <li>Incident: <%= email.incident %></li>
+    <% else %>
+      <li> This is a standard email </li>
+    <% end %>
+    <li>-------------</li>
+  <% end %>
+</ul>
