@@ -61,3 +61,7 @@
 {"email":{"id":44,"sender":"alksfj","subject":"asklfj","body":"alskfj","header":"","in_quarantine":false,"incident":"","centre_code":"","is_standard":true}}
 {"email":{"id":45,"sender":"alksfj","subject":"alskfj","body":"askfj","header":"","in_quarantine":false,"incident":"","centre_code":"","is_standard":true}}
 {"email":{"id":46,"sender":"kas@as.com","subject":"sjfka","body":"cacas","header":"","in_quarantine":false,"incident":"","centre_code":"","is_standard":true}}
+{"text":{"id":1,"sender":"07462738465","body":"This is a text LOL","expanded_body":null,"header":null}}
+{"text":{"id":6,"sender":"66666","body":"cacas LOL","expanded_body":"cacas LOL <Laughing out loud>","header":""}}
+{"text":{"id":1,"sender":"012345","body":"yo yo LOL","expanded_body":null,"header":null}}
+{"text":{"id":1,"sender":"012345","body":"yo yo LOL","expanded_body":null,"header":null}}
