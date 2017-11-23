@@ -5,8 +5,6 @@ class Email < ApplicationRecord
   validates :subject, presence: true
   validates :body, presence: true
 
-
-
   private
   def check_urls
     #checks Url in the body of the email

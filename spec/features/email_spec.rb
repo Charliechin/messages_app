@@ -9,10 +9,12 @@ RSpec.feature "User creates a new message" do
 
     it "sends a standard email with simple body" do
       fill_in "Sender", with: "john@example.com"
+      fill_in "Subject", with: "Dummy Subject"
       fill_in "Body", with: "lorem ipsum"
       click_button "Create Email"
 
       expect(Email.last.sender).to have_content "john@example.com"
+      expect(Email.last.subject).to have_content "Dummy Subject"
       expect(Email.last.body).to have_content "lorem ipsum"
       expect(Email.last.is_standard).to eq(true)
       expect(page).to have_content "Email has been sent."
@@ -21,10 +23,12 @@ RSpec.feature "User creates a new message" do
     it "sends a standard email with url in body" do
 
       fill_in "Sender", with: "john@example.com"
+      fill_in "Subject", with: "Dummy Subject"
       fill_in "Body", with: "lorem ipsum http:www.google.com"
       click_button "Create Email"
 
       expect(Email.first.sender).to have_content "john@example.com"
+      expect(Email.last.subject).to have_content "Dummy Subject"
       expect(Email.first.is_standard).to eq(true)
       expect(page).to have_content "Email has been sent."
 
@@ -33,6 +37,7 @@ RSpec.feature "User creates a new message" do
 
     it "displays a SIR list after a Email has been sent" do
       fill_in "Sender", with: "@duderino"
+      fill_in "Subject", with: "Dummy Subject"
       fill_in "Body", with: "#hello @johnny lorem ipsum"
       click_button "Create Email"
 
